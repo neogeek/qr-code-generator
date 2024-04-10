@@ -4,7 +4,7 @@ import qrcode from 'qrcode';
 
 import parseUrl from 'parse-url';
 
-const isHex = (color: string) => /^#([a-f0-9]{3}){1,2}/.test(color);
+const isHex = (color: string) => /^#([a-f0-9]{3}){1,2}/i.test(color);
 
 const defaultUrl = 'https://google.com/';
 const defaultDarkColor = '#000000';
