@@ -117,14 +117,19 @@ export default function Home() {
             <Header />
           </div>
           <div className='mt-5 sm:mx-auto sm:w-full sm:max-w-sm'>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={state.dataURL}
-              width='500'
-              height='500'
-              alt='QR code'
-              style={{ width: '100%', height: 'auto' }}
-            />
+            <a href={state.dataURL} download={`qr-code-${Date.now()}.png`}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={state.dataURL}
+                width='500'
+                height='500'
+                alt='QR code'
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </a>
+            <p className='mt-2 text-s text-center dark:text-slate-500'>
+              Click image to download QR code.
+            </p>
           </div>
           <div className='mt-5 sm:mx-auto sm:w-full sm:max-w-sm'>
             <Form
