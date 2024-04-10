@@ -33,7 +33,7 @@ export async function createQRCode(prevState: any, formData: FormData) {
           ? lightColor
           : defaultLightColor,
     },
-    scale: 30,
+    scale: 40,
   });
 
   return {
