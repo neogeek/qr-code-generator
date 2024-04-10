@@ -24,6 +24,19 @@ const Header = () => {
   );
 };
 
+const Footer = () => {
+  return (
+    <>
+      <p className='mx-auto mt-6 max-w-xl text-lg text-gray-600'>
+        Made with <span className='text-red-600'>♥️</span> by{' '}
+        <a href='https://scottdoxey.com/' className='underline'>
+          Scott Doxey
+        </a>
+      </p>
+    </>
+  );
+};
+
 const Form = ({
   url,
   darkColor,
@@ -139,6 +152,9 @@ export default function Home() {
               action={formAction}
             />
           </div>
+          <div className='mt-2 text-center sm:mx-auto sm:w-full sm:max-w-sm'>
+            <Footer />
+          </div>
         </div>
       </main>
     );
@@ -157,6 +173,9 @@ export default function Home() {
             lightColor={state.rawFormData.lightColor}
             action={formAction}
           />
+        </div>
+        <div className='mt-2 text-center sm:mx-auto sm:w-full sm:max-w-sm'>
+          <Footer />
         </div>
       </div>
     </main>
