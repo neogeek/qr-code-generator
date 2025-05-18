@@ -1,6 +1,6 @@
 'use client';
 
-import { useFormState } from 'react-dom';
+import { useActionState } from 'react';
 
 import Link from 'next/link';
 
@@ -49,7 +49,7 @@ const Form = ({
   action: (formData: FormData) => void;
 }) => {
   return (
-    <form className='space-y-3' action={action}>
+    <form className='mt-3 space-y-3' action={action}>
       <div>
         <label
           htmlFor='url'
@@ -64,7 +64,7 @@ const Form = ({
             type='url'
             autoComplete='none'
             required
-            className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+            className='block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
             defaultValue={url || defaultUrl}
           />
         </div>
@@ -112,7 +112,7 @@ const Form = ({
 };
 
 export default function Home() {
-  const [state, formAction] = useFormState(createQRCode, {
+  const [state, formAction] = useActionState(createQRCode, {
     href: '',
     dataURL: '',
     rawFormData: {
